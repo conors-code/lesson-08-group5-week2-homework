@@ -1,4 +1,3 @@
-import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers";
 import { ethers, getDefaultProvider, Wallet } from "ethers";
 import { Ballot, Ballot__factory } from "../typechain-types";
 import * as dotenv from "dotenv";
