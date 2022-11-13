@@ -51,43 +51,7 @@ async function main() {
   console.log(`The contract was deployed at address ${ballotContract.address}`);
   const chairperson = await ballotContract.chairperson();
   console.log(`The chairperson for this ballot is ${chairperson}`);
-  
 
-
-  // let args = process.argv;
-  // console.log(args);
-  // let proposals = args.slice(2); //slice(2) returns 3rd and following parts
-
-  // if (proposals.length <= 0) throw new Error("Too few args provided");
-  // console.log("Deploying Ballot contract");
-  // console.log("Proposals: ");
-  
-  // proposals.forEach((element, index) => {
-  //   console.log(`Proposal N. ${index + 1}: ${element}`);
-  // });
-  
-  // let ballotContract: Ballot;
-
-  // let accounts : SignerWithAddress[];
-  // accounts = await ethers.getSigners();
-  
-  // //in this case, we can use the scripted ballot factory.  Gain independence
-  // //  from hardhat here by using the Ballot__factory
-  // //const ballotContractFactory = await ethers.getContractFactory("Ballot");
-  // const ballotContractFactory = new Ballot__factory(accounts[0]);
-
-  // //this needs to be converted from the Byte32 to String.  It must be 
-  // //done for each of them.  it could be done with a helper function to
-  // //loop through the array for each String entrty, or a map.
-  // ballotContract = await ballotContractFactory.deploy(convertStringArrayToBytes32(proposals)) as Ballot;
-  // await ballotContract.deployed();
-  
-  // console.log(`The contract was deployed at address ${ballotContract.address}`);
-
-  
-  // const chairperson = await ballotContract.chairperson();
-
-  // console.log(`The chairperson for this ballot is ${chairperson}`);
 
 }
 
