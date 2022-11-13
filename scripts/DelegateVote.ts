@@ -48,7 +48,7 @@ async function main() {
   
   const delegateReceipt = await delegateTx.wait();
   
-  console.log(`receipt hashcode for tx is: ${receipt.transactionHash}`);
+  console.log(`receipt hashcode for tx is: ${delegateReceipt.transactionHash}`);
 }
 
 
