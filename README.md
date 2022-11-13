@@ -8,6 +8,8 @@ Add Scripts and tests to the Sample Hardhat Project, to implement:
 - querying results
 These scripts should not have a dependency on hardhat.
 
+Note that contracts/Ballot.sol is *not* my work; it came from the hardhat base project 
+
 # Base project was:
 This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
 
