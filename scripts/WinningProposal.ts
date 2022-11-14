@@ -1,4 +1,4 @@
-import { BigNumber, ethers, getDefaultProvider, Wallet } from "ethers";
+import { ethers, Wallet } from "ethers";
 import { Ballot, Ballot__factory } from "../typechain-types";
 import * as dotenv from "dotenv";
 import { InfuraProvider } from "@ethersproject/providers";
@@ -25,16 +25,15 @@ async function main() {
     contractAddress
   );
 
-  const winningProposalNumber: BigNumber =
-    await ballotContract.winningProposal();
+  const winningProposalNumber = await ballotContract.winningProposal();
 
-  const winnerNameBytes32 = await ballotContract.winnerName(
-    winningProposalNumber
-  );
+  const winnerNameBytes32 = await ballotContract.winnerName();
 
   const winnerName = ethers.utils.parseBytes32String(winnerNameBytes32);
 
-  console.log(`Winning proposal name is: ${winnerName}`);
+  console.log(
+    `Winning proposal index is ${winningProposalNumber} and the name is: ${winnerName}`
+  );
 }
 
 main().catch((error) => {
