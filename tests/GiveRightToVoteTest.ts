@@ -38,13 +38,9 @@ describe("Ballot", async function () {
 
   describe("Give right to vote", async function () {
     it("Only chairperson can give right to vote", async function () {
-      const anyVoterGiveRightToVote = await ballotContract
-        .connect(voter1)
-        .giveRightToVote(voter2.address);
-
-      expect(anyVoterGiveRightToVote).to.be.revertedWith(
-        "Only chairperson can give right to vote."
-      );
+      await expect(
+        ballotContract.connect(voter1).giveRightToVote(voter2.address)
+      ).to.be.revertedWith("Only chairperson can give right to vote.");
     });
     it("Chairperson can give right to vote", async function () {
       const giveRightToVoteTx = await ballotContract.giveRightToVote(
