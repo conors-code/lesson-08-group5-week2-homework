@@ -60,10 +60,8 @@ describe("Ballot", async function () {
         });
 
         it("must not allow a voter to delegate to a non-voter", async () => {
-            const unregVoter = await ballotContract
-            .connect(accounts[1])
-            .delegate(accounts[2].address);
-            expect(unregVoter).to.be.reverted();
+            await expect(ballotContract.connect(accounts[1]).delegate(accounts[2].address))
+            .to.be.reverted;
         });
     });
 });
