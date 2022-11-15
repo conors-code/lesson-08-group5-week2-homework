@@ -46,7 +46,7 @@ describe("Ballot", async function () {
         "Only chairperson can give right to vote."
       );
     });
-    it("Chairperson can give right to vote", async () => {
+    it("Chairperson can give right to vote", async function () {
       const giveRightToVoteTx = await ballotContract.giveRightToVote(
         voter1.address
       );
