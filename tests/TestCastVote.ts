@@ -46,7 +46,6 @@ describe("Ballot", async function () {
             const ballotContractNonVoter = ballotContract.connect(accounts[1]);
             await expect(ballotContractNonVoter.vote(0)).to.be.
                 revertedWith("Has no right to vote");
-            //expect (await ballotContractNonVoter.vote(0)).to.throw("Has no right to vote");
 
         });
         
@@ -88,6 +87,7 @@ describe("Ballot", async function () {
         it("doesn't add the vote to the non-chosen proposals",async () => {
             const signerVoter = accounts[0].address;
             console.log("Voting for the 1st of 3 proposals");
+            //check the other two before and after; they shouldn't change.
             const beforeVoteCount2 = (await ballotContract.proposals(1)).voteCount;
             const beforeVoteCount3 = (await ballotContract.proposals(2)).voteCount;
             const voteTxReceipt = await ballotContract.vote(0);
