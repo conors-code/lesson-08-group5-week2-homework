@@ -2,9 +2,6 @@ import { Ballot } from "../typechain-types/Ballot";
 import { ethers } from "hardhat";
 import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers";
 import { expect } from "chai";
-import { TIMEOUT } from "dns";
-import { Ballot__factory } from "../typechain-types";
-import { fail } from "assert";
 
 const PROPOSALS = ["Matheus 4 President", "Steve 4 chancellor", "Encode FTW"];
 
